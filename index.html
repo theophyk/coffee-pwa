@@ -1,0 +1,44 @@
+# index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <title>Coffee Calculator</title>
+  <style>
+    body { background: #e0e0e0; font-family: sans-serif; margin: 0; padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+    .container { background: white; padding: 20px; border-radius: 12px; max-width: 400px; margin: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+    input { width: 100%; font-size: 1rem; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin-top: 6px; }
+    .row { margin-bottom: 15px; }
+    .result { font-size: 1.2rem; font-weight: bold; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row"><label>Refractive Index (n)</label><input id="n" type="number" step="0.0001" /></div>
+    <div class="row"><label>Coffee Dose (g)</label><input id="dose" type="number" step="0.1" /></div>
+    <div class="row"><label>Coffee Yield (g)</label><input id="yield" type="number" step="0.1" /></div>
+    <div class="result">TDS: <span id="tds">0</span>%</div>
+    <div class="result">Extraction Yield: <span id="ey">0</span>%</div>
+  </div>
+  <script>
+    function calcTDS(n) { return 1.23; }
+    function update() {
+      const n = parseFloat(document.getElementById('n').value);
+      const dose = parseFloat(document.getElementById('dose').value);
+      const y = parseFloat(document.getElementById('yield').value);
+      if (!isNaN(n)) {
+        const tds = calcTDS(n);
+        document.getElementById('tds').textContent = tds.toFixed(2);
+        if (!isNaN(dose) && !isNaN(y) && dose > 0) {
+          const ey = (tds * y) / dose;
+          document.getElementById('ey').textContent = ey.toFixed(2);
+        }
+      }
+    }
+    document.querySelectorAll('input').forEach(inp => inp.addEventListener('input', update));
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js');
+  </script>
+</body>
+</html>
