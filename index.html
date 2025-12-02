@@ -1,4 +1,4 @@
-.
+&nbsp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +23,10 @@
     <div class="result">Extraction Yield: <span id="ey">0</span>%</div>
   </div>
   <script>
-    function calcTDS(n) { return 1.23; }
+    function calcTDS(n) {
+      const x = n - 1.3330;
+      return -280.2 * x * x + 566.7 * x + 0.0059
+    }
     function update() {
       const n = parseFloat(document.getElementById('n').value);
       const dose = parseFloat(document.getElementById('dose').value);
