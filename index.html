@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="manifest" href="manifest.json" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="CoffeeCalc">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
   <title>Coffee TDS/EY Calculator</title>
   <style>
     * { box-sizing: border-box; }
-    body { background: #e0e0e0; font-family: sans-serif; margin: 0; padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+    body { background: #e0e0e0; font-family: sans-serif; margin: 0; padding: 20px; display: flex; flex-direction: column; gap: 20px; overscroll-behavior-y: none; }
     .container { background: white; padding: 20px; border-radius: 12px; max-width: 400px; margin: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
     input { width: 100%; font-size: 1rem; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin-top: 6px; }
     .row { margin-bottom: 15px; }
@@ -20,9 +21,9 @@
 </head>
 <body>
   <div class="container">
-    <div class="row"><label>Brix %</label><input id="brix" type="number" step="0.01" /></div>
-    <div class="row"><label>Coffee Dose (g)</label><input id="dose" type="number" step="0.1" /></div>
-    <div class="row"><label>Coffee Yield (g)</label><input id="yield" type="number" step="0.1" /></div>
+    <div class="row"><label>Brix %</label><input id="brix" type="number" step="0.01"></div>
+    <div class="row"><label>Coffee Dose (g)</label><input id="dose" type="number" step="0.1"></div>
+    <div class="row"><label>Coffee Yield (g)</label><input id="yield" type="number" step="0.1"></div>
     <div class="result">TDS: <span id="tds">0</span>%</div>
     <div class="result">Extraction Yield: <span id="ey">0</span>%</div>
   </div>
