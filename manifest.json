@@ -1,5 +1,5 @@
 {
-  "name": "Coffee Calculator",
+  "name": "Coffee TDS/EY Calculator",
   "short_name": "CoffeeCalc",
   "start_url": "./index.html",
   "display": "standalone",
