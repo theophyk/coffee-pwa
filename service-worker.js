@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coffee-pwa-v1.1';
+const CACHE_NAME = 'coffee-pwa-v1.01';
 const ASSETS = [
   './',
   './index.html',
