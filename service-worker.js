@@ -1,4 +1,3 @@
-# service-worker.js
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open('coffee-pwa-v1').then(cache => cache.addAll([
